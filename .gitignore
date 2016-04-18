@@ -75,6 +75,7 @@ list.txt
 CMakeLists.txt
 
 # Executables
+gestionProduct
 *.exe
 *.out
 *.app
