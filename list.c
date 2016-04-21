@@ -30,6 +30,12 @@ void addToList(List_t list,Product_t product)
   list->numberOfElements++;
 }
 
+void deleteFromList(List_t list,int position){
+  printf("DELETING!\n");
+  free(list->list[position]);
+  list->list[position] = 0;
+}
+
 Product_t getProduct(List_t list,int position)
 {
   return (Product_t) list->list[position];

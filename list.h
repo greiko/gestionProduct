@@ -13,6 +13,8 @@ List_t createListProduct();
 
 void addToList(List_t list,Product_t product);
 
+void deleteFromList(List_t list,int posistion);
+
 int getNumberElements(List_t list);
 
 Product_t getProduct(List_t list,int position);
