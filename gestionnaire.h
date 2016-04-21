@@ -30,7 +30,7 @@ int showInventory(List_t list);
 
 int newProductMenu(List_t list);
 
-int eraseProduct();
+int eraseProduct(List_t list);
 
 void errorMessage(char* errMessage);
 

@@ -41,7 +41,7 @@ int menuSelection()
         checkError = showInventory(list);
         break; /* optional */
       case 'd'  :
-        printf("Need to be implented!\n");
+        eraseProduct(list);
         break; /* optional */
       case 'w'  :
         saveInventory(list);
@@ -107,13 +107,22 @@ int showInventory(List_t list)
   int i;
   for (i = 0; i < current_nb; i++)
   {
-    printf("========================================================\n");
-    printf("Id of product: %d\n", getId(getProduct(list, i)));
-    printf("Name of Product: %s\n", getName(getProduct(list, i)));
-    printf("Current Possession: %s\n", getCurrentPossesion(getProduct(list, i)));
-    printf("Owner: %s\n\n", getOwner(getProduct(list, i)));
-    printf("========================================================\n");
-    printf("Press 'c' to continue\n");
+    Product_t currentProduct = getProduct(list,i);
+      if(currentProduct == 0){
+          printf("========================================================\n");
+          printf("PRODUCT DELETED\n");
+          printf("========================================================\n");
+          printf("Press 'c' to continue\n");
+      }
+      else {
+          printf("========================================================\n");
+          printf("Id of product: %d\n", getId(currentProduct));
+          printf("Name of Product: %s\n", getName(currentProduct));
+          printf("Current Possession: %s\n", getCurrentPossesion(currentProduct));
+          printf("Owner: %s\n\n", getOwner(currentProduct));
+          printf("========================================================\n");
+          printf("Press 'c' to continue\n");
+      }
     while( getchar() != 'c' );
   }
   return 0;
@@ -145,8 +154,9 @@ int newProductMenu(List_t list)
   return checkError;
 }
 
-int eraseProduct()
+int eraseProduct(List_t list)
 {
+    deleteFromList(list,2);
   return 0;
 }
 
