@@ -113,7 +113,7 @@ int showInventory(List_t list)
     printf("Current Possession: %s\n", getCurrentPossesion(getProduct(list, i)));
     printf("Owner: %s\n\n", getOwner(getProduct(list, i)));
     printf("========================================================\n");
-    printf("Press 'c' to Continue\n");
+    printf("Press 'c' to continue\n");
     while( getchar() != 'c' );
   }
   return 0;
